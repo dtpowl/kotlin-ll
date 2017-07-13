@@ -53,27 +53,24 @@ Kotlin in the real world
 What is Kotlin Like?
 ====================
 
-- Semantics
-   - Object-oriented
-   - Garbage-collected (Swift and Objective C use automatic reference counting)
-   - Strong, static typing disclipline
-   - Immutable values
-   - Parametric types (generics)
-   - Nullable types
-      - combined with parametric types, provides very strong compile-time safety checks
+Semantics
+---------
+- Object-oriented
+- Garbage-collected (Swift and Objective C use automatic reference counting)
+- Strong, static typing disclipline
+- Immutable values
+- Parametric types (generics)
+- Nullable types
+  - combined with parametric types, provides very strong compile-time safety checks
 
-   - Has support for some functional programming patterns too
-      - Anonymous functions (lambdas)
-      - Higher-order functions
-      - Standard library includes many useful higher-order functions that will be familiar to Ruby developers
-         - map
-         - reduce
-         - filter
-         - etc etc
-
-   - Function types
-      - Since Kotlin is statically typed, in order for higher-order functions to be definable, functions must have types
-      - Function types are parameterized by the types of their input and output
+- Has support for some functional programming patterns too
+  - Anonymous functions (lambdas)
+  - Higher-order functions
+  - Standard library includes many useful higher-order functions that will be familiar to Ruby developers (*map, reduce, filter, etc.*)
+  
+- Function types
+  - Since Kotlin is statically typed, in order for higher-order functions to be definable, functions must have types
+  - Function types are parameterized by the types of their input and output
 
 
 Code Examples
