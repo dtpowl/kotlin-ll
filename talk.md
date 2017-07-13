@@ -1,10 +1,14 @@
-Why Kotlin?
-===========
+What is Kotlin?
+===============
+ - Object-oriented
+ - Statically typed 
+ - Garbage-collected 
+ - Excellent cross-platform support
+ - Targets mobile, desktop, and server
 
-- What is Kotlin?
- -- Kotlin is an object-oriented, statically typed, garbage-collected language with excellent cross-platform support, targeting mobile, desktop, and server
 
-- Why Kotlin?
+Kotlin's Advantages
+------------------
   -- Almost entirely full-stack and broadly cross-platform
      -- Usable for both client and server code, on any client platform (mobile, desktop, browser) and any server platform (Unix/Linux, Windows)
   -- Syntax and semantics will be relatively familiar to users of Ruby, Python, Java, C/C++, Swift, and Objective-C
