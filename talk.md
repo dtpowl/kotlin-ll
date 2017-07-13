@@ -18,10 +18,11 @@ Kotlin's Advantages
   - Type system allows efficient generated code and compile-time safety checks
 
 - Compilation targets:
-  -- JVM (including first-class support for native Android apps)
-  -- iOS
-  -- Other native: uses LLVM backend, so it can target (e.g.) native MacOS, Linux, & Windows environments with x86, x64, ARM, and other architectures
-  -- even Javascript (which could be used to target either browser clients or Node servers)
+  - First-class support for native Android applications
+  - Other JVM targets
+  - iOS
+  - Other native: uses LLVM backend, so it can target (e.g.) native MacOS, Linux, & Windows environments with x86, x64, ARM, and other architectures
+  - even Javascript (which could be used to target either browser clients or Node servers)
      -- also allows cross-calling between Kotlin and JS
 
   -- Also:
