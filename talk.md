@@ -46,7 +46,7 @@ Kotlin in the real world
   - Trello
   - Basecamp (founded by DHH, developer of Rails)
 
--- Corda, a sophisticated open-source fintech application (used by Goldman Sachs, JP Morgan, Deutsche Bank and others) written entirely in Kotlin
+- Corda, a sophisticated open-source fintech application (used by Goldman Sachs, JP Morgan, Deutsche Bank and others) written entirely in Kotlin
 
 
 
@@ -54,60 +54,134 @@ What is Kotlin Like?
 ====================
 
 - Semantics
-   -- Object-oriented
-      {code examples}
+   - Object-oriented
+   - Garbage-collected (Swift and Objective C use automatic reference counting)
+   - Strong, static typing disclipline
+   - Immutable values
+   - Parametric types (generics)
+   - Nullable types
+      - combined with parametric types, provides very strong compile-time safety checks
 
-   -- Garbage-collected (Swift and Objective C use automatic reference counting)
-      {explain what GC and ARC are for noobs + lamers}
+   - Has support for some functional programming patterns too
+      - Anonymous functions (lambdas)
+      - Higher-order functions
+      - Standard library includes many useful higher-order functions that will be familiar to Ruby developers
+         - map
+         - reduce
+         - filter
+         - etc etc
 
-   -- Strong, static typing disclipline
-      {code examples}
-
-   -- Immutable values (val vs var)
-
-   -- Parametric types (generics)
-      {code examples}
-
-   -- Nullable types
-      {give examples}
-      -- combined with parametric types, provides very strong compile-time safety checks
-
-   -- Has support for some functional programming patterns too
-      -- Anonymous functions (lambdas)
-         {code examples}
-
-      -- Higher-order functions
-         {code examples}
-
-      -- Standard library includes many useful higher-order functions that will be familiar to Ruby developers
-         -- map
-         -- reduce
-         -- filter
-         -- etc etc
-
-   -- Annotations
-      {code examples}
-
-   -- mixins (like Ruby)
-      {code examples}
-
-   -- Function types
-      -- Since Kotlin is statically typed, in order for higher-order functions to be definable, functions must have types
-      -- Function types are parameterized by the types of their input and output
-      {code example: show a definition of a higher-order function, pointing out function type parameterization}
+   - Function types
+      - Since Kotlin is statically typed, in order for higher-order functions to be definable, functions must have types
+      - Function types are parameterized by the types of their input and output
 
 
+```
+open class Person constructor(val firstName: String, val lastName: String) {
+  init {
+    println("Person constructed with name ${firstName} ${lastName}")
+  }
 
+  constructor(name: String) : this(name.split(" ")[0], name.split(" ")[1]) { }
 
+  fun fullName(): String {
+    return "${firstName} ${lastName}"
+  }
+}
 
-   -- Type inference
-      {explain Hindley-Milner algorithm}
-      {code example}
+val person1 = Person("Robert", "Fogarty")
+val person2 = Person("Jason Bishop")
+```
 
-   -- Coroutines
-      {define and give examples}
+```
+class Employee constructor(firstName: String, lastName: String, var employer: Person) : Person(firstName, lastName) {
+  constructor(name: String, employer: Person) : this(name.split(" ")[0], name.split(" ")[1], employer) { }
+}
 
-   -- Reflection
-      -- class references
-      -- function references
-      -- property references
+val jane = Person("Jane Doe");
+val john = Employee("John", "Deer", jane);
+```
+
+```
+var a: String = "abc"
+a = null // compilation error
+
+var b: String? = "abc"
+b = null // ok
+
+val l = a.length // ok
+val l = b.length // error: variable 'b' might be null
+
+val l: Int  = if (b != null) b.length else -1 // explicit null checks
+val l: Int? = b?.length // "safe call" operator
+val l: Int = b?.length ?: -1 // retains semantics of first case
+```
+
+```
+class MySet<T>(vararg initial: T) {
+  val list: MutableList<T> = mutableListOf<T>(*initial)
+  var size = 0
+
+  init {
+    size = list.size
+  }
+
+  fun includes(e: T) : Boolean {
+    for (x in list) {
+      if (x == e) {
+        return true
+      }
+    }
+
+    return false
+  }
+
+  fun add(e: T) : Boolean {
+    if (!this.includes(e)) {
+      list.add(e)
+      size += 1
+      return true
+
+    } else {
+      return false
+    }
+  }
+
+  fun remove(e: T) : Boolean {
+    if (this.includes(e)) {
+      list.remove(e)
+      size -= 1
+      return true
+
+    } else {
+      return false
+    }
+  }
+}
+```
+
+```
+fun makeHyperoperation(order: Int) : (Int, Int) -> Int {
+  if (order == 1) {
+    return { a: Int, b: Int -> a + b }
+  } else {
+    return fun (a: Int, b: Int) : Int {
+      var r = a;
+      repeat(b - 1, {
+        r = makeHyperoperation(order - 1)(r, a)
+      })
+      return r
+    }
+  }
+}
+
+val add = makeHyperoperation(1);
+val mult = makeHyperoperation(2);
+val pow = makeHyperoperation(3);
+val tetrate = makeHyperoperation(4);
+
+add(3, 4);       // 7
+mult(3, 4);      // 12
+pow(3, 4);       // 81
+tetrate(3, 4);   // ??
+```
