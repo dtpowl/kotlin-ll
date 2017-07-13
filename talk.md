@@ -76,7 +76,7 @@ What is Kotlin Like?
       - Function types are parameterized by the types of their input and output
 
 
-```
+```kotlin
 open class Person constructor(val firstName: String, val lastName: String) {
   init {
     println("Person constructed with name ${firstName} ${lastName}")
@@ -93,7 +93,7 @@ val person1 = Person("Robert", "Fogarty")
 val person2 = Person("Jason Bishop")
 ```
 
-```
+```kotlin
 class Employee constructor(firstName: String, lastName: String, var employer: Person) : Person(firstName, lastName) {
   constructor(name: String, employer: Person) : this(name.split(" ")[0], name.split(" ")[1], employer) { }
 }
@@ -102,7 +102,7 @@ val jane = Person("Jane Doe");
 val john = Employee("John", "Deer", jane);
 ```
 
-```
+```kotlin
 var a: String = "abc"
 a = null // compilation error
 
@@ -117,7 +117,7 @@ val l: Int? = b?.length // "safe call" operator
 val l: Int = b?.length ?: -1 // retains semantics of first case
 ```
 
-```
+```kotlin
 class MySet<T>(vararg initial: T) {
   val list: MutableList<T> = mutableListOf<T>(*initial)
   var size = 0
@@ -160,7 +160,7 @@ class MySet<T>(vararg initial: T) {
 }
 ```
 
-```
+```kotlin
 fun makeHyperoperation(order: Int) : (Int, Int) -> Int {
   if (order == 1) {
     return { a: Int, b: Int -> a + b }
