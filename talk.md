@@ -53,30 +53,34 @@ Kotlin in the real world
 What is Kotlin Like?
 ====================
 
-Semantics
----------
-- Object-oriented
-- Garbage-collected (Swift and Objective C use automatic reference counting)
-- Strong, static typing disclipline
-- Immutable values
-- Parametric types (generics)
-- Nullable types
-    Combined with parametric types, provides very strong compile-time safety checks
+- Semantics
+   - Object-oriented
+   - Garbage-collected (Swift and Objective C use automatic reference counting)
+   - Strong, static typing disclipline
+   - Immutable values
+   - Parametric types (generics)
+   - Nullable types
+      - combined with parametric types, provides very strong compile-time safety checks
 
-- Has support for some functional programming patterns too
-- Anonymous functions (lambdas)
-- Higher-order functions
-- Standard library includes many useful higher-order functions that will be familiar to Ruby developers
-  - map
-  - reduce
-  - filter
-  - etc etc
+   - Has support for some functional programming patterns too
+      - Anonymous functions (lambdas)
+      - Higher-order functions
+      - Standard library includes many useful higher-order functions that will be familiar to Ruby developers
+         - map
+         - reduce
+         - filter
+         - etc etc
 
-- Function types
-  - Since Kotlin is statically typed, in order for higher-order functions to be definable, functions must have types
-  - Function types are parameterized by the types of their input and output
+   - Function types
+      - Since Kotlin is statically typed, in order for higher-order functions to be definable, functions must have types
+      - Function types are parameterized by the types of their input and output
 
 
+Code Examples
+=============
+
+A Kotlin Class
+--------------
 ```kotlin
 open class Person constructor(val firstName: String, val lastName: String) {
   init {
@@ -94,6 +98,8 @@ val person1 = Person("Robert", "Fogarty")
 val person2 = Person("Jason Bishop")
 ```
 
+A Derived Class
+--------------
 ```kotlin
 class Employee constructor(firstName: String, lastName: String, var employer: Person) : Person(firstName, lastName) {
   constructor(name: String, employer: Person) : this(name.split(" ")[0], name.split(" ")[1], employer) { }
@@ -103,6 +109,8 @@ val jane = Person("Jane Doe");
 val john = Employee("John", "Deer", jane);
 ```
 
+Nullable Types
+--------------
 ```kotlin
 var a: String = "abc"
 a = null // compilation error
@@ -110,14 +118,21 @@ a = null // compilation error
 var b: String? = "abc"
 b = null // ok
 
-val l = a.length // ok
-val l = b.length // error: variable 'b' might be null
+var len: Int = a.length // ok
+len = b.length  // error: variable 'b' might be null
+len: Int = if (b != null) b.length else -1 // explicit null checks
 
-val l: Int  = if (b != null) b.length else -1 // explicit null checks
-val l: Int? = b?.length // "safe call" operator
-val l: Int = b?.length ?: -1 // retains semantics of first case
+val b: String? = "abc"
+if (b != null) {
+  println(b.length)
+}
+
+val nullable_len: Int? = b?.length // "safe call" operator
+len = b?.length ?: -1 // retains semantics of first case
 ```
 
+Parametric Types
+----------------
 ```kotlin
 class MySet<T>(vararg initial: T) {
   val list: MutableList<T> = mutableListOf<T>(*initial)
@@ -161,6 +176,8 @@ class MySet<T>(vararg initial: T) {
 }
 ```
 
+Function Types
+--------------
 ```kotlin
 fun makeHyperoperation(order: Int) : (Int, Int) -> Int {
   if (order == 1) {
