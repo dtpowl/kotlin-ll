@@ -9,11 +9,13 @@ What is Kotlin?
 
 Kotlin's Advantages
 ------------------
-  -- Almost entirely full-stack and broadly cross-platform
-     -- Usable for both client and server code, on any client platform (mobile, desktop, browser) and any server platform (Unix/Linux, Windows)
-  -- Syntax and semantics will be relatively familiar to users of Ruby, Python, Java, C/C++, Swift, and Objective-C
-  -- Excellent JVM interoperability
-  -- Type system allows efficient generated code and compile-time
+- Almost entirely full-stack and broadly cross-platform
+  - Usable for both client and server code
+  - Any client platform (mobile, desktop, browser)
+  - Any server platform (Unix/Linux, Windows)
+  - Syntax and semantics will be relatively familiar to users of Java, Ruby, C/C++, Swift, and Objective-C
+  - Excellent JVM interoperability
+  - Type system allows efficient generated code and compile-time safety checks
 
 - Compilation targets:
   -- JVM (including first-class support for native Android apps)
