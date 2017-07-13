@@ -31,7 +31,8 @@ Kotlin's Advantages
 
 *In other words*:
     Kotlin is incredibly flexible: almost entirely full-stack, usable for both client and server code, on any client platform (mobile, desktop, browser) and any server platform (Unix/Linux, Windows).
-    - Kotlin does not specify UIs; an appropriate tool should be used for that. For instance, when compiling Kotlin to Javascript for a web application, the front-end would still be written in HTML and CSS. A cross-platform UI toolkit like React Native is also an option
+
+*Note*: Kotlin does not specify UIs; an appropriate tool should be used for that. For instance, when compiling Kotlin to Javascript for a web application, the front-end would still be written in HTML and CSS. A cross-platform UI toolkit like React Native is also an option
 
 Kotlin in the real world
 ------------------------
@@ -110,19 +111,3 @@ What is Kotlin Like?
       -- class references
       -- function references
       -- property references
-
-
-- Cool syntax bits and pieces
-   -- ?. (safe navigation operator)
-      {code example]
-
-   -- ?: (coalescing operator)
-      {code example}
-
-   -- string interpolation
-      {code example, make comparison with Java}
-
-   -- destructuring
-      {code example}
-
-   -- anonymous functions (already mentioned above)
