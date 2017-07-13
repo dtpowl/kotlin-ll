@@ -1,8 +1,8 @@
 What is Kotlin?
 ===============
  - Object-oriented
- - Statically typed 
- - Garbage-collected 
+ - Statically typed
+ - Garbage-collected
  - Excellent cross-platform support
  - Targets mobile, desktop, and server
 
@@ -23,28 +23,30 @@ Kotlin's Advantages
   - iOS
   - Other native: uses LLVM backend, so it can target (e.g.) native MacOS, Linux, & Windows environments with x86, x64, ARM, and other architectures
   - even Javascript (which could be used to target either browser clients or Node servers)
-     -- also allows cross-calling between Kotlin and JS
+  - also allows cross-calling between Kotlin and JS
 
-  -- Also:
-     -- Offers full JVM bytecode compatibility (therefore interoperability with any/all existingJVM libraries written in Java, Scala, Groovy, J, others)
-     -- A high-quality Java-to-Kotlin converter already exists
+- Also good:
+  - Offers full JVM bytecode compatibility (therefore interoperability with any/all existingJVM libraries written in Java, Scala, Groovy, J, others)
+  - A high-quality Java-to-Kotlin converter already exists
 
-In other words: Kotlin is incredibly flexible: almost entirely full-stack, usable for both client and server code, on any client platform (mobile, desktop, browser) and any server platform (Unix/Linux, Windows)
-   -- one deficiency: you can't really build UIs in Kotlin. UIs could be built with React or Elm (or with native tools)
+*In other words*:
+    Kotlin is incredibly flexible: almost entirely full-stack, usable for both client and server code, on any client platform (mobile, desktop, browser) and any server platform (Unix/Linux, Windows).
+    - Kotlin does not specify UIs; an appropriate tool should be used for that. For instance, when compiling Kotlin to Javascript for a web application, the front-end would still be written in HTML and CSS. A cross-platform UI toolkit like React Native is also an option
 
-- Kotlin in the real world
-  -- Some prominent users
-    -- Amazon Web Services
-    -- Pinterest
-    -- Coursera
-    -- Netflix
-    -- Uber
-    -- Square
-    -- Trello
-    -- Basecamp (founded by DHH, developer of Rails)
+Kotlin in the real world
+------------------------
+- Some prominent users:
+  - Amazon Web Services
+  - Pinterest
+  - Coursera
+  - Netflix
+  - Uber
+  - Square
+  - Trello
+  - Basecamp (founded by DHH, developer of Rails)
 
-    -- Corda, a sophisticated open-source fintech application (used by Goldman Sachs, JP Morgan, Deutsche Bank and others) written entirely in Kotlin
-       {explain why Kotlin's language features make it useful for financial technology applications}
+-- Corda, a sophisticated open-source fintech application (used by Goldman Sachs, JP Morgan, Deutsche Bank and others) written entirely in Kotlin
+
 
 
 What is Kotlin Like?
