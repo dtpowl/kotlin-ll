@@ -98,15 +98,17 @@ val person2 = Person("Jason Bishop")
 A Derived Class
 --------------
 ```kotlin
-class Employee constructor(firstName: String, 
-                           lastName: String, 
+class Employee constructor(firstName: String,
+                           lastName: String,
                            var employer: Person) : Person(firstName, lastName) {
-  constructor(name: String, employer: Person) : 
+  constructor(name: String, employer: Person) :
       this(name.split(" ")[0], name.split(" ")[1], employer) { }
 }
 
 val jane = Person("Jane Doe");
 val john = Employee("John", "Deer", jane);
+
+john.employer.fullName() // "Jane Doe"
 ```
 
 Nullable Types
