@@ -98,8 +98,11 @@ val person2 = Person("Jason Bishop")
 A Derived Class
 --------------
 ```kotlin
-class Employee constructor(firstName: String, lastName: String, var employer: Person) : Person(firstName, lastName) {
-  constructor(name: String, employer: Person) : this(name.split(" ")[0], name.split(" ")[1], employer) { }
+class Employee constructor(firstName: String, 
+                           lastName: String, 
+                           var employer: Person) : Person(firstName, lastName) {
+  constructor(name: String, employer: Person) : 
+      this(name.split(" ")[0], name.split(" ")[1], employer) { }
 }
 
 val jane = Person("Jane Doe");
